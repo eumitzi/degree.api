@@ -1,5 +1,7 @@
 package degree.api.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +21,7 @@ public class Persoana {
   @Column(name = "adresa")
   private String adresa;
 
+  @JsonBackReference
   @ManyToOne
   private TipPersoana tipPersoana;
 

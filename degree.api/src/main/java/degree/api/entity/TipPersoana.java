@@ -1,5 +1,7 @@
 package degree.api.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,28 +11,24 @@ import java.util.List;
 public class TipPersoana {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY )
   private int id;
 
-  @Column(name = "tip")
+  @Column(name = "tip_persoana")
   private String tipPersoana;
 
-  @OneToMany(mappedBy = "tipPersoana", cascade = CascadeType.ALL)
+  @JsonManagedReference
+  @OneToMany(mappedBy = "tipPersoana", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Persoana> persoane = new ArrayList<>();
 
   public TipPersoana() {}
 
-  public TipPersoana(int id, String tipPersoana) {
-    this.id = id;
-    this.tipPersoana = tipPersoana;
+  public List<Persoana> getPersoane() {
+    return persoane;
   }
 
-  @Override
-  public String toString() {
-    return "TipPersoane{" +
-            "id=" + id +
-            ", tipPersoana='" + tipPersoana + '\'' +
-            '}';
+  public void setPersoane(List<Persoana> persoane) {
+    this.persoane = persoane;
   }
 
   public int getId() {

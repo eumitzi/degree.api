@@ -25,7 +25,7 @@ public class TipPersoanaController {
   @PostMapping("/tipPers")
   public TipPersoana postTipPers(TipPersoana tipPersoana){
     System.out.println("Tip pers: " + tipPersoana.getTipPersoana());
-    tipPersoanaService.save(tipPersoana);
+    tipPersoanaService.addTipPersoana(tipPersoana);
     return tipPersoana;
   }
 }
