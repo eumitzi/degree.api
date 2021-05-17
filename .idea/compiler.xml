@@ -11,5 +11,9 @@
         <module name="degree.api.degree.api.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="degree.api.degree.api.main~1" target="11" />
+      <module name="degree.api.degree.api.test~1" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
