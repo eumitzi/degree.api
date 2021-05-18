@@ -1,6 +1,8 @@
 package degree.api.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "studenti")
@@ -16,48 +18,13 @@ public class Student {
   @OneToOne(cascade = CascadeType.ALL)
   private Persoana persoana;
 
-  public Student() {}
+  @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private List<InstantaDisciplina> instantaDisciplinaList = new ArrayList<>();
 
-  public Student(int id, String nrMatricol, Persoana persoana) {
-    this.id = id;
-    this.nrMatricol = nrMatricol;
-    this.persoana = persoana;
-  }
+  @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private List<NoteActivitate> noteActivitateList = new ArrayList<>();
 
-  public int getId() {
-    return id;
-  }
+  @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private List<NoteExamen> noteExamenList = new ArrayList<>();
 
-  public void setId(int id_student) {
-    this.id = id_student;
-  }
-
-  public String getNrMatricol() {
-    return nrMatricol;
-  }
-
-  public void setNrMatricol(String nr_matricol) {
-    this.nrMatricol = nr_matricol;
-  }
-
-  @Override
-  public String toString() {
-    return "Student{"
-        + "id_student="
-        + id
-        + ", nr_matricol='"
-        + nrMatricol
-        + '\''
-        + ", persoana="
-        + persoana
-        + '}';
-  }
-
-  public Persoana getPersoana() {
-    return persoana;
-  }
-
-  public void setPersoana(Persoana persoana) {
-    this.persoana = persoana;
-  }
 }

@@ -1,7 +1,6 @@
 package degree.api.controller;
 
 import degree.api.entity.TipPersoana;
-import degree.api.repository.TipPersoanaRepository;
 import degree.api.service.TipPersoanaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
