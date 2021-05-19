@@ -9,7 +9,7 @@ import java.util.Set;
 public class CicluStudiu {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "tip_ciclu_studiu")
   private String tipCicluStudiu;

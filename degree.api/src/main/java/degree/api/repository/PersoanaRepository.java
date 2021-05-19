@@ -1,7 +1,10 @@
 package degree.api.repository;
 
 import degree.api.entity.Persoana;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PersoanaRepository {
-    Persoana save(Persoana persoana);
+@Repository
+public interface PersoanaRepository extends JpaRepository<Persoana, Integer>{
 }
+

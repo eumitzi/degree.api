@@ -10,7 +10,7 @@ public class PerioadaSemestru {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "numar_semestru")
   private int numarSemestru;

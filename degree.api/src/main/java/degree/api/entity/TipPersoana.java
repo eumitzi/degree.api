@@ -11,17 +11,25 @@ import java.util.List;
 public class TipPersoana {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY )
-  private int id;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   @Column(name = "tip_persoana")
-  private String tipPersoana;
+  private String tip;
 
   @JsonManagedReference
   @OneToMany(mappedBy = "tipPersoana", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Persoana> persoane = new ArrayList<>();
 
   public TipPersoana() {}
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public List<Persoana> getPersoane() {
     return persoane;
@@ -31,19 +39,11 @@ public class TipPersoana {
     this.persoane = persoane;
   }
 
-  public int getId() {
-    return id;
+  public String getTip() {
+    return tip;
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public String getTipPersoana() {
-    return tipPersoana;
-  }
-
-  public void setTipPersoana(String tipPersoana) {
-    this.tipPersoana = tipPersoana;
+  public void setTip(String tipPersoana) {
+    this.tip = tipPersoana;
   }
 }

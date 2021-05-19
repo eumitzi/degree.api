@@ -17,13 +17,13 @@ public class TipPersoanaController {
   public TipPersoana getTipPersoana(
       @RequestParam(value = "tipPersoana", defaultValue = "student") String tip) {
     TipPersoana tipPersoana = new TipPersoana();
-    tipPersoana.setTipPersoana(tip);
+    tipPersoana.setTip(tip);
     return tipPersoana;
   }
 
   @PostMapping("/tipPers")
   public TipPersoana postTipPers(TipPersoana tipPersoana){
-    System.out.println("Tip pers: " + tipPersoana.getTipPersoana());
+    System.out.println("Tip pers: " + tipPersoana.getTip());
     tipPersoanaService.addTipPersoana(tipPersoana);
     return tipPersoana;
   }

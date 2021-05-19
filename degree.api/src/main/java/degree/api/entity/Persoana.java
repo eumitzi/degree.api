@@ -10,7 +10,7 @@ public class Persoana {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "nume")
   private String nume;
@@ -27,12 +27,12 @@ public class Persoana {
 
   public Persoana() {}
 
-  public int getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(int id_persoana) {
-    this.id = id_persoana;
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public String getNume() {

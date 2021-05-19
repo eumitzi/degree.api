@@ -12,13 +12,13 @@ public class InstantaDisciplina {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
   @Column(name = "numar_credite")
   private int nrCredite;
   @Column(name = "semestru")
   private int semestru;
   @Column(name = "factor_k")
-  private float factor_k;
+  private float factorK;
   @OneToOne
   private AnUniversitar anUniversitar;
   @ManyToOne
@@ -38,12 +38,12 @@ public class InstantaDisciplina {
   private Set<Profesor> profesorSet = new HashSet<Profesor>();
 
   @OneToMany(mappedBy = "instantaDisciplina", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<NoteActivitate> noteActivitateList = new ArrayList<>();
+  private List<NotaActivitate> notaActivitateList = new ArrayList<>();
 
   @OneToMany(mappedBy = "instantaDisciplina", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<NoteExamen> noteExamenList = new ArrayList<>();
+  private List<NotaExamen> notaExamenList = new ArrayList<>();
 
   @OneToMany(mappedBy = "instantaDisciplina", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<NoteFinale> noteFinaleList = new ArrayList<>();
+  private List<NotaFinala> notaFinalaList = new ArrayList<>();
 
 }

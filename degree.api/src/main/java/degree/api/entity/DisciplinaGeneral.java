@@ -10,7 +10,7 @@ public class DisciplinaGeneral {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "nume")
   private String nume;

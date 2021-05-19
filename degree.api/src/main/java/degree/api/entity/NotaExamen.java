@@ -3,25 +3,25 @@ package degree.api.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "note_activitate")
-public class NoteActivitate {
+@Table(name = "note_examen")
+public class NotaExamen {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "data")
   private String data;
 
-  @Column(name = "notaActivitate")
-  private float notaActivitate;
+  @Column(name = "nota")
+  private float nota;
 
   @ManyToOne
   private Student student;
 
   @ManyToOne
-  private InstantaDisciplina instantaDisciplina;
+  private Nota nota;
 
   @ManyToOne
-  private Note note;
-
+  private InstantaDisciplina instantaDisciplina;
 }

@@ -4,11 +4,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "note_finale")
-public class NoteFinale {
+public class NotaFinala {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "data")
   private String data;
@@ -30,7 +30,7 @@ public class NoteFinale {
   private InstantaDisciplina instantaDisciplina;
 
   @ManyToOne
-  private Note note;
+  private Nota nota;
 
 
 }

@@ -19,11 +19,11 @@ public class TipPersoanaService{
     @Transactional
     public TipPersoana addTipPersoana(TipPersoana tipPersoana){
         tipPersoana =  tipPersoanaRepository.save(tipPersoana);
-        Persoana persoana = new Persoana();
-        persoana.setNume("test");
-        persoana.setAdresa("adresa");
-        persoana.setTipPersoane(tipPersoana);
-       persoanaRepository.save(persoana);
+//        Persoana persoana = new Persoana();
+//        persoana.setNume("test");
+//        persoana.setAdresa("adresa");
+//        persoana.setTipPersoane(tipPersoana);
+//       persoanaRepository.save(persoana);
         return tipPersoana;
     }
 }

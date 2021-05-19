@@ -10,7 +10,7 @@ public class ProgramaStudiu {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "detaliu_programa_studiu")
   private String detaliu;

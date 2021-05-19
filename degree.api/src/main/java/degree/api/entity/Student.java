@@ -10,7 +10,7 @@ public class Student {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(name = "nr_matricol")
   private String nrMatricol;
@@ -22,9 +22,9 @@ public class Student {
   private List<InstantaDisciplina> instantaDisciplinaList = new ArrayList<>();
 
   @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<NoteActivitate> noteActivitateList = new ArrayList<>();
+  private List<NotaActivitate> notaActivitateList = new ArrayList<>();
 
   @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<NoteExamen> noteExamenList = new ArrayList<>();
+  private List<NotaExamen> notaExamenList = new ArrayList<>();
 
 }
